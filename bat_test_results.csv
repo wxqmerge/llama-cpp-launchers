@@ -1,28 +1,307 @@
 "File","Status","ExitCode","StdErr"
-"runGlimmer30B.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
-operable program or batch file.
+"runGlimmer30B.bat","TimedOut","-1","0.00.095.172 I cmn  common_param: common_params_print_info: build 10472 (60eeeb608) with Clang 20.1.8 for Windows x86_64
+0.00.095.173 I cmn  common_param: common_params_print_info: verbosity = 4 (adjust with the `-lv N` CLI arg)
+0.00.095.173 I cmn  common_param: device_info:
+0.00.155.867 I cmn  common_param:   - CUDA0   : NVIDIA GeForce RTX 5090 (32606 MiB, 30991 MiB free)
+0.00.155.874 I cmn  common_param:   - CPU     : Intel(R) Core(TM) Ultra 9 285K (64912 MiB, 51471 MiB free)
+0.00.155.945 I cmn  common_param: system_info: n_threads = 24 (n_threads_batch = 24) / 24 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.155.993 I srv          init: running without SSL
+0.00.156.008 I srv          init: api_keys: ****-123
+0.00.156.059 I srv          init: using 23 threads for HTTP server
+0.00.156.329 I srv         start: binding port with default address family
+0.00.171.687 I srv    load_model: loading model 'D:\models\Muse-Glimmer-30B-UD-Q4_K_XL.gguf'
+0.00.171.692 I srv    load_model: local path 'D:\models\Muse-Glimmer-30B-UD-Q4_K_XL.gguf'
+0.00.207.765 I srv    load_model: [mtmd] estimated worst-case memory usage of mmproj is 2339.13 MiB (took 35.68 ms)
+0.00.520.551 E llama_init_from_model: failed to initialize the context: dflash requires ctx_other to be set (this warning is normal during memory fitting)
+0.00.572.232 W srv    load_model: [spec] failed to measure draft model memory: failed to create llama_context from model
+0.00.572.251 I cmn  common_init_: fitting params to device memory ...
+0.00.572.252 I cmn  common_init_: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+0.00.572.255 I common_params_fit_impl: getting device memory data for initial parameters:
+0.00.972.024 I common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+0.00.972.030 I common_memory_breakdown_print: |   - CUDA0 (RTX 5090)   | 32606 = 30991 + (17633 = 14408 +    1008 +    2216) +      -16017 |
+0.00.972.030 I common_memory_breakdown_print: |   - Host               |                   2001 =   721 +       0 +    1280                |
+0.01.029.312 I common_params_fit_impl: projected to use 17633 MiB of device memory vs. 30991 MiB of free device memory
+0.01.029.319 I common_params_fit_impl: will leave 13357 >= 3289 MiB of free device memory, no changes needed
+0.01.029.322 I common_fit_params: successfully fit params to free device memory
+0.01.029.331 I common_fit_params: fitting params to free memory took 0.46 seconds
+0.01.085.282 I llama_model_loader: loaded meta data with 36 key-value pairs and 731 tensors from D:\models\Muse-Glimmer-30B-UD-Q4_K_XL.gguf (version GGUF V3 (latest))
+0.01.085.305 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.01.085.307 I llama_model_loader: - kv   0:                       general.architecture str              = muse-glimmer
+0.01.085.307 I llama_model_loader: - kv   1:                               general.type str              = model
+0.01.085.308 I llama_model_loader: - kv   2:                               general.name str              = Muse-Glimmer-30B
+0.01.085.309 I llama_model_loader: - kv   3:                         general.size_label str              = 28B
+0.01.085.310 I llama_model_loader: - kv   4:                   muse-glimmer.block_count u32              = 52
+0.01.085.311 I llama_model_loader: - kv   5:                muse-glimmer.context_length u32              = 131072
+0.01.085.311 I llama_model_loader: - kv   6:              muse-glimmer.embedding_length u32              = 6656
+0.01.085.311 I llama_model_loader: - kv   7:           muse-glimmer.feed_forward_length u32              = 19968
+0.01.085.312 I "
+"runGlimmer30nv.bat","OK","0","error while handling argument ""--reasoning"": error: unknown value for --reasoning: '--reasoning-budget'
+
+
+usage:
+-rea,  --reasoning [on|off|auto]        Use reasoning/thinking in the chat ('on', 'off', or 'auto', default:
+                                        'auto' (detect from template))
+                                        (env: LLAMA_ARG_REASONING)
+
+
+to show complete usage, run with -h
 "
-"runGlimmer30nv.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
-operable program or batch file.
-"
-"runNemotron35Lightning30B.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
-operable program or batch file.
-"
-"runq36MTP27BThink.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
-operable program or batch file.
-"
-"runq36MTP27Bvision.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
-operable program or batch file.
-"
-"runQwen38-27B.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
-operable program or batch file.
-"
-"runQwen38-27BNV.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
-operable program or batch file.
-"
-"runQwen38-27BThink.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
-operable program or batch file.
-"
-"runQwen38-27Bvision.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
-operable program or batch file.
-"
+"runNemotron35Lightning30B.bat","TimedOut","-1","0.00.186.289 I cmn  common_param: common_params_print_info: build 10472 (60eeeb608) with Clang 20.1.8 for Windows x86_64
+0.00.186.290 I cmn  common_param: common_params_print_info: verbosity = 4 (adjust with the `-lv N` CLI arg)
+0.00.186.290 I cmn  common_param: device_info:
+0.00.263.025 I cmn  common_param:   - CUDA0   : NVIDIA GeForce RTX 5090 (32606 MiB, 30991 MiB free)
+0.00.263.034 I cmn  common_param:   - CPU     : Intel(R) Core(TM) Ultra 9 285K (64912 MiB, 53120 MiB free)
+0.00.263.101 I cmn  common_param: system_info: n_threads = 24 (n_threads_batch = 24) / 24 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.263.145 I srv          init: running without SSL
+0.00.263.160 I srv          init: api_keys: ****-123
+0.00.263.799 I srv          init: using 23 threads for HTTP server
+0.00.264.075 I srv         start: binding port with default address family
+0.00.266.664 I srv    load_model: loading model 'D:\models\NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4-noMTP.gguf'
+0.00.266.666 I srv    load_model: local path 'D:\models\NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4-noMTP.gguf'
+0.00.266.675 I cmn  common_init_: fitting params to device memory ...
+0.00.266.676 I cmn  common_init_: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+0.00.266.679 I common_params_fit_impl: getting device memory data for initial parameters:
+0.00.479.082 I common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+0.00.479.088 I common_memory_breakdown_print: |   - CUDA0 (RTX 5090)   | 32606 = 30943 + (24655 = 18192 +    3311 +    3151) +      -22992 |
+0.00.479.088 I common_memory_breakdown_print: |   - Host               |                   2741 =   672 +       0 +    2069                |
+0.00.508.987 I common_params_fit_impl: projected to use 24655 MiB of device memory vs. 30943 MiB of free device memory
+0.00.508.993 I common_params_fit_impl: will leave 6287 >= 1024 MiB of free device memory, no changes needed
+0.00.508.996 I common_fit_params: successfully fit params to free device memory
+0.00.509.007 I common_fit_params: fitting params to free memory took 0.24 seconds
+0.00.541.302 I llama_model_loader: loaded meta data with 53 key-value pairs and 494 tensors from D:\models\NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4-noMTP.gguf (version GGUF V3 (latest))
+0.00.541.315 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.541.317 I llama_model_loader: - kv   0:                       general.architecture str              = nemotron_h_moe
+0.00.541.317 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.541.323 I llama_model_loader: - kv   2:                     general.sampling.top_p f32              = 0.950000
+0.00.541.324 I llama_model_loader: - kv   3:                      general.sampling.temp f32              = 1.000000
+0.00.541.325 I llama_model_loader: - kv   4:                               general.name str              = E7Fa1B0Bdaf462C67C7F0Bf638Addacd89Fd3054
+0.00.541.326 I llama_model_loader: - kv   5:                         general.size_label str              = 128x2.4B
+0.00.541.326 I llama_model_loader: - kv   6:                            general.license str              = other
+0.00.541.326 I llama_model_loader: - kv   7:                       general.license.name str              = openmdw-1.1
+0.00.541.327 I llama_model_loader: - kv   8:                       general.license.link str              = https://openmdw.ai/license/1-1/
+0.00.541.339 I llama_model_loader: - kv   9:                               general.tags arr[str,4]       = [""nvidia"", ""pytorch"", ""nemotron-3.5"",...
+0.00.541.341 I "
+"runq36MTP27BThink.bat","TimedOut","-1","0.00.195.806 I cmn  common_param: common_params_print_info: build 10472 (60eeeb608) with Clang 20.1.8 for Windows x86_64
+0.00.195.809 I cmn  common_param: common_params_print_info: verbosity = 4 (adjust with the `-lv N` CLI arg)
+0.00.195.809 I cmn  common_param: device_info:
+0.00.271.896 I cmn  common_param:   - CUDA0   : NVIDIA GeForce RTX 5090 (32606 MiB, 30991 MiB free)
+0.00.271.907 I cmn  common_param:   - CPU     : Intel(R) Core(TM) Ultra 9 285K (64912 MiB, 53098 MiB free)
+0.00.271.973 I cmn  common_param: system_info: n_threads = 24 (n_threads_batch = 24) / 24 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.272.027 I srv          init: running without SSL
+0.00.272.043 I srv          init: api_keys: ****-123
+0.00.272.516 I srv          init: using 23 threads for HTTP server
+0.00.272.838 I srv         start: binding port with default address family
+0.00.279.428 I srv    load_model: loading model 'D:\models\Qwen3.6-27B-NVFP4.gguf'
+0.00.279.435 I srv    load_model: local path 'D:\models\Qwen3.6-27B-NVFP4.gguf'
+0.00.279.445 I cmn  common_init_: fitting params to device memory ...
+0.00.279.445 I cmn  common_init_: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+0.00.279.449 I common_params_fit_impl: getting device memory data for initial parameters:
+0.00.589.075 I common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+0.00.589.082 I common_memory_breakdown_print: |   - CUDA0 (RTX 5090)   | 32606 = 30841 + (23721 = 17227 +    4365 +    2128) +      -21955 |
+0.00.589.082 I common_memory_breakdown_print: |   - Host               |                   3577 =  2425 +       0 +    1152                |
+0.00.631.400 I common_params_fit_impl: projected to use 23721 MiB of device memory vs. 30841 MiB of free device memory
+0.00.631.408 I common_params_fit_impl: will leave 7119 >= 1024 MiB of free device memory, no changes needed
+0.00.631.411 I common_fit_params: successfully fit params to free device memory
+0.00.631.420 I common_fit_params: fitting params to free memory took 0.35 seconds
+0.00.681.963 I llama_model_loader: loaded meta data with 46 key-value pairs and 1252 tensors from D:\models\Qwen3.6-27B-NVFP4.gguf (version GGUF V3 (latest))
+0.00.681.983 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.681.985 I llama_model_loader: - kv   0:                       general.architecture str              = qwen35
+0.00.681.986 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.681.987 I llama_model_loader: - kv   2:                     general.sampling.top_k i32              = 20
+0.00.681.991 I llama_model_loader: - kv   3:                     general.sampling.top_p f32              = 0.950000
+0.00.681.992 I llama_model_loader: - kv   4:                      general.sampling.temp f32              = 1.000000
+0.00.681.992 I llama_model_loader: - kv   5:                               general.name str              = Qwen3.6 27B NVFP4
+0.00.681.996 I llama_model_loader: - kv   6:                           general.finetune str              = NVFP4
+0.00.681.996 I llama_model_loader: - kv   7:                           general.basename str              = Qwen3.6
+0.00.681.996 I llama_model_loader: - kv   8:                         general.size_label str              = 27B
+0.00.681.997 I llama_model_loader: - kv   9:                            general.license str              = apache-2.0
+0.00.681.997 I llama_model_loader: - kv  10:                   general.base_model.count u32              = 1
+0.00.681.998 I llama_model_loader: - kv  11:                  general.base_model.0.name str              = Qwen3.6 27B
+0.00.681.998 I "
+"runq36MTP27Bvision.bat","OK","0","0.00.158.265 I cmn  common_param: common_params_print_info: build 10472 (60eeeb608) with Clang 20.1.8 for Windows x86_64
+0.00.158.266 I cmn  common_param: common_params_print_info: verbosity = 4 (adjust with the `-lv N` CLI arg)
+0.00.158.266 I cmn  common_param: device_info:
+0.00.219.801 I cmn  common_param:   - CUDA0   : NVIDIA GeForce RTX 5090 (32606 MiB, 30991 MiB free)
+0.00.219.874 I cmn  common_param:   - CPU     : Intel(R) Core(TM) Ultra 9 285K (64912 MiB, 53135 MiB free)
+0.00.219.959 I cmn  common_param: system_info: n_threads = 24 (n_threads_batch = 24) / 24 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.220.005 I srv          init: running without SSL
+0.00.220.020 I srv          init: api_keys: ****-123
+0.00.220.055 I srv          init: using 23 threads for HTTP server
+0.00.220.273 I srv         start: binding port with default address family
+0.00.228.654 I srv    load_model: loading model 'D:\models\Qwen3.6-27B-UD-Q5_K_XL.gguf'
+0.00.228.655 I srv    load_model: local path 'D:\models\Qwen3.6-27B-UD-Q5_K_XL.gguf'
+0.00.229.875 E gguf_init_from_file: failed to open GGUF file 'D:\models\mmproj-Qwen3.6-27B-Q8_0.gguf' (No such file or directory)
+0.00.229.928 E mtmd_get_memory_usage: error: Failed to load CLIP model from D:\models\mmproj-Qwen3.6-27B-Q8_0.gguf
+
+0.00.229.932 E srv    load_model: [mtmd] failed to get memory usage of mmproj
+0.00.229.942 I cmn  common_init_: fitting params to device memory ...
+0.00.229.942 I cmn  common_init_: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+0.00.229.946 I common_params_fit_impl: getting device memory data for initial parameters:
+0.00.541.432 I common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+0.00.541.440 I common_memory_breakdown_print: |   - CUDA0 (RTX 5090)   | 32606 = 30841 + (24943 = 18265 +    4501 +    2176) +      -23178 |
+0.00.541.440 I common_memory_breakdown_print: |   - Host               |                   2018 =   833 +       0 +    1184                |
+0.00.590.059 I common_params_fit_impl: projected to use 24943 MiB of device memory vs. 30841 MiB of free device memory
+0.00.590.064 I common_params_fit_impl: will leave 5897 >= 1024 MiB of free device memory, no changes needed
+0.00.590.079 I common_fit_params: successfully fit params to free device memory
+0.00.590.088 I common_fit_params: fitting params to free memory took 0.36 seconds
+0.00.637.850 I llama_model_loader: loaded meta data with 52 key-value pairs and 866 tensors from D:\models\Qwen3.6-27B-UD-Q5_K_XL.gguf (version GGUF V3 (latest))
+0.00.637.880 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.637.882 I llama_model_loader: - kv   0:                       general.architecture str              = qwen35
+0.00.637.883 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.637.885 I llama_model_loader: - kv   2:                     general.sampling.top_k i32              = 20
+0.00.637.889 I llama_model_loader: - kv   3:                     general.sampling.top_p f32              = 0.950000
+0.00.637.890 I llama_model_loader: - kv   4:                      general.sampling.temp f32              = 1.000000
+0.00.637.891 I llama_model_loader: - kv   5:                               general.name str              = Qwen3.6-27B
+0.00.637.891 I llama_model_loader: - kv   6:                           general.basename str              = Qwen3.6-27B
+0.00.637.891 I llama_model_loader: - kv   7:                       general.quantized_by str              = Unsloth
+0.00.637.892 I llama_model_loader: - kv   8:                         general.size_label str              = 27B
+0.00.637.892 I "
+"runQwen38-27B.bat","TimedOut","-1","0.00.099.408 I cmn  common_param: common_params_print_info: build 10472 (60eeeb608) with Clang 20.1.8 for Windows x86_64
+0.00.099.411 I cmn  common_param: common_params_print_info: verbosity = 4 (adjust with the `-lv N` CLI arg)
+0.00.099.411 I cmn  common_param: device_info:
+0.00.160.771 I cmn  common_param:   - CUDA0   : NVIDIA GeForce RTX 5090 (32606 MiB, 30991 MiB free)
+0.00.160.780 I cmn  common_param:   - CPU     : Intel(R) Core(TM) Ultra 9 285K (64912 MiB, 53139 MiB free)
+0.00.160.846 I cmn  common_param: system_info: n_threads = 24 (n_threads_batch = 24) / 24 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.160.891 I srv          init: running without SSL
+0.00.160.907 I srv          init: api_keys: ****-123
+0.00.160.946 I srv          init: using 23 threads for HTTP server
+0.00.161.859 I srv         start: binding port with default address family
+0.00.175.254 I srv    load_model: loading model 'D:\models\Qwen3.8-27B-NVFP4-MTP-MEDIUM.gguf'
+0.00.175.259 I srv    load_model: local path 'D:\models\Qwen3.8-27B-NVFP4-MTP-MEDIUM.gguf'
+0.00.175.268 I cmn  common_init_: fitting params to device memory ...
+0.00.175.269 I cmn  common_init_: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+0.00.175.272 I common_params_fit_impl: getting device memory data for initial parameters:
+0.00.492.972 I common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+0.00.492.978 I common_memory_breakdown_print: |   - CUDA0 (RTX 5090)   | 32606 = 30841 + (21077 = 14399 +    4501 +    2176) +      -19312 |
+0.00.492.978 I common_memory_breakdown_print: |   - Host               |                   2179 =   994 +       0 +    1184                |
+0.00.539.762 I common_params_fit_impl: projected to use 21077 MiB of device memory vs. 30841 MiB of free device memory
+0.00.539.766 I common_params_fit_impl: will leave 9763 >= 1024 MiB of free device memory, no changes needed
+0.00.539.794 I common_fit_params: successfully fit params to free device memory
+0.00.539.803 I common_fit_params: fitting params to free memory took 0.36 seconds
+0.00.590.914 I llama_model_loader: loaded meta data with 46 key-value pairs and 1202 tensors from D:\models\Qwen3.8-27B-NVFP4-MTP-MEDIUM.gguf (version GGUF V3 (latest))
+0.00.590.938 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.590.942 I llama_model_loader: - kv   0:                       general.architecture str              = qwen35
+0.00.590.943 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.590.944 I llama_model_loader: - kv   2:                     general.sampling.top_k i32              = 20
+0.00.590.950 I llama_model_loader: - kv   3:                     general.sampling.top_p f32              = 0.950000
+0.00.590.951 I llama_model_loader: - kv   4:                      general.sampling.temp f32              = 1.000000
+0.00.590.951 I llama_model_loader: - kv   5:                           general.finetune str              = NVFP4-MTP
+0.00.590.952 I llama_model_loader: - kv   6:                           general.basename str              = unsloth__Qwen3.8
+0.00.590.952 I llama_model_loader: - kv   7:                         general.size_label str              = 27B
+0.00.590.953 I llama_model_loader: - kv   8:                            general.license str              = apache-2.0
+0.00.590.953 I llama_model_loader: - kv   9:                   general.base_model.count u32              = 1
+0.00.590.954 I llama_model_loader: - kv  10:                  general.base_model.0.name str              = Qwen3.8 27B NVFP4
+0.00.590.954 I llama_model_loader: - kv  11:          general.base_model.0.organization str              = unsloth
+0.00.590.956 I "
+"runQwen38-27BNV.bat","TimedOut","-1","0.00.191.923 I cmn  common_param: common_params_print_info: build 10472 (60eeeb608) with Clang 20.1.8 for Windows x86_64
+0.00.191.924 I cmn  common_param: common_params_print_info: verbosity = 4 (adjust with the `-lv N` CLI arg)
+0.00.191.925 I cmn  common_param: device_info:
+0.00.267.789 I cmn  common_param:   - CUDA0   : NVIDIA GeForce RTX 5090 (32606 MiB, 30991 MiB free)
+0.00.267.798 I cmn  common_param:   - CPU     : Intel(R) Core(TM) Ultra 9 285K (64912 MiB, 53111 MiB free)
+0.00.267.878 I cmn  common_param: system_info: n_threads = 24 (n_threads_batch = 24) / 24 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.267.921 I srv          init: running without SSL
+0.00.267.935 I srv          init: api_keys: ****-123
+0.00.267.979 I srv          init: using 23 threads for HTTP server
+0.00.268.249 I srv         start: binding port with default address family
+0.00.276.036 I srv    load_model: loading model 'D:\models\Qwen3.8-27B-NVFP4-MTP-MEDIUM.gguf'
+0.00.276.039 I srv    load_model: local path 'D:\models\Qwen3.8-27B-NVFP4-MTP-MEDIUM.gguf'
+0.00.276.049 I cmn  common_init_: fitting params to device memory ...
+0.00.276.050 I cmn  common_init_: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+0.00.276.054 I common_params_fit_impl: getting device memory data for initial parameters:
+0.00.586.881 I common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+0.00.586.886 I common_memory_breakdown_print: |   - CUDA0 (RTX 5090)   | 32606 = 30841 + (21077 = 14399 +    4501 +    2176) +      -19312 |
+0.00.586.886 I common_memory_breakdown_print: |   - Host               |                   2179 =   994 +       0 +    1184                |
+0.00.631.976 I common_params_fit_impl: projected to use 21077 MiB of device memory vs. 30841 MiB of free device memory
+0.00.631.980 I common_params_fit_impl: will leave 9763 >= 1024 MiB of free device memory, no changes needed
+0.00.631.983 I common_fit_params: successfully fit params to free device memory
+0.00.631.991 I common_fit_params: fitting params to free memory took 0.36 seconds
+0.00.682.593 I llama_model_loader: loaded meta data with 46 key-value pairs and 1202 tensors from D:\models\Qwen3.8-27B-NVFP4-MTP-MEDIUM.gguf (version GGUF V3 (latest))
+0.00.682.617 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.682.620 I llama_model_loader: - kv   0:                       general.architecture str              = qwen35
+0.00.682.620 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.682.622 I llama_model_loader: - kv   2:                     general.sampling.top_k i32              = 20
+0.00.682.627 I llama_model_loader: - kv   3:                     general.sampling.top_p f32              = 0.950000
+0.00.682.628 I llama_model_loader: - kv   4:                      general.sampling.temp f32              = 1.000000
+0.00.682.628 I llama_model_loader: - kv   5:                           general.finetune str              = NVFP4-MTP
+0.00.682.629 I llama_model_loader: - kv   6:                           general.basename str              = unsloth__Qwen3.8
+0.00.682.629 I llama_model_loader: - kv   7:                         general.size_label str              = 27B
+0.00.682.630 I llama_model_loader: - kv   8:                            general.license str              = apache-2.0
+0.00.682.630 I llama_model_loader: - kv   9:                   general.base_model.count u32              = 1
+0.00.682.631 I llama_model_loader: - kv  10:                  general.base_model.0.name str              = Qwen3.8 27B NVFP4
+0.00.682.631 I llama_model_loader: - kv  11:          general.base_model.0.organization str              = unsloth
+0.00.682.633 I "
+"runQwen38-27BThink.bat","TimedOut","-1","0.00.194.156 I cmn  common_param: common_params_print_info: build 10472 (60eeeb608) with Clang 20.1.8 for Windows x86_64
+0.00.194.157 I cmn  common_param: common_params_print_info: verbosity = 4 (adjust with the `-lv N` CLI arg)
+0.00.194.157 I cmn  common_param: device_info:
+0.00.268.252 I cmn  common_param:   - CUDA0   : NVIDIA GeForce RTX 5090 (32606 MiB, 30991 MiB free)
+0.00.268.272 I cmn  common_param:   - CPU     : Intel(R) Core(TM) Ultra 9 285K (64912 MiB, 53145 MiB free)
+0.00.268.335 I cmn  common_param: system_info: n_threads = 24 (n_threads_batch = 24) / 24 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.268.377 I srv          init: running without SSL
+0.00.268.392 I srv          init: api_keys: ****-123
+0.00.268.911 I srv          init: using 23 threads for HTTP server
+0.00.269.187 I srv         start: binding port with default address family
+0.00.272.509 I srv    load_model: loading model 'D:\models\Qwen3.8-27B-NVFP4-MTP-MEDIUM.gguf'
+0.00.272.512 I srv    load_model: local path 'D:\models\Qwen3.8-27B-NVFP4-MTP-MEDIUM.gguf'
+0.00.272.522 I cmn  common_init_: fitting params to device memory ...
+0.00.272.522 I cmn  common_init_: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+0.00.272.526 I common_params_fit_impl: getting device memory data for initial parameters:
+0.00.584.421 I common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+0.00.584.427 I common_memory_breakdown_print: |   - CUDA0 (RTX 5090)   | 32606 = 30841 + (21077 = 14399 +    4501 +    2176) +      -19312 |
+0.00.584.427 I common_memory_breakdown_print: |   - Host               |                   2179 =   994 +       0 +    1184                |
+0.00.628.686 I common_params_fit_impl: projected to use 21077 MiB of device memory vs. 30841 MiB of free device memory
+0.00.628.692 I common_params_fit_impl: will leave 9763 >= 1024 MiB of free device memory, no changes needed
+0.00.628.716 I common_fit_params: successfully fit params to free device memory
+0.00.628.726 I common_fit_params: fitting params to free memory took 0.36 seconds
+0.00.679.679 I llama_model_loader: loaded meta data with 46 key-value pairs and 1202 tensors from D:\models\Qwen3.8-27B-NVFP4-MTP-MEDIUM.gguf (version GGUF V3 (latest))
+0.00.679.705 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.679.707 I llama_model_loader: - kv   0:                       general.architecture str              = qwen35
+0.00.679.707 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.679.709 I llama_model_loader: - kv   2:                     general.sampling.top_k i32              = 20
+0.00.679.713 I llama_model_loader: - kv   3:                     general.sampling.top_p f32              = 0.950000
+0.00.679.714 I llama_model_loader: - kv   4:                      general.sampling.temp f32              = 1.000000
+0.00.679.714 I llama_model_loader: - kv   5:                           general.finetune str              = NVFP4-MTP
+0.00.679.715 I llama_model_loader: - kv   6:                           general.basename str              = unsloth__Qwen3.8
+0.00.679.716 I llama_model_loader: - kv   7:                         general.size_label str              = 27B
+0.00.679.716 I llama_model_loader: - kv   8:                            general.license str              = apache-2.0
+0.00.679.717 I llama_model_loader: - kv   9:                   general.base_model.count u32              = 1
+0.00.679.717 I llama_model_loader: - kv  10:                  general.base_model.0.name str              = Qwen3.8 27B NVFP4
+0.00.679.718 I llama_model_loader: - kv  11:          general.base_model.0.organization str              = unsloth
+0.00.679.720 I "
+"runQwen38-27Bvision.bat","OK","0","0.00.196.602 I cmn  common_param: common_params_print_info: build 10472 (60eeeb608) with Clang 20.1.8 for Windows x86_64
+0.00.196.605 I cmn  common_param: common_params_print_info: verbosity = 4 (adjust with the `-lv N` CLI arg)
+0.00.196.606 I cmn  common_param: device_info:
+0.00.271.389 I cmn  common_param:   - CUDA0   : NVIDIA GeForce RTX 5090 (32606 MiB, 30991 MiB free)
+0.00.271.398 I cmn  common_param:   - CPU     : Intel(R) Core(TM) Ultra 9 285K (64912 MiB, 53139 MiB free)
+0.00.271.463 I cmn  common_param: system_info: n_threads = 24 (n_threads_batch = 24) / 24 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.271.509 I srv          init: running without SSL
+0.00.271.525 I srv          init: api_keys: ****-123
+0.00.272.042 I srv          init: using 23 threads for HTTP server
+0.00.272.317 I srv         start: binding port with default address family
+0.00.285.510 I srv    load_model: loading model 'D:\models\Qwen3.8-27B-NVFP4-MTP-MEDIUM.gguf'
+0.00.285.515 I srv    load_model: local path 'D:\models\Qwen3.8-27B-NVFP4-MTP-MEDIUM.gguf'
+0.00.285.866 E gguf_init_from_file: failed to open GGUF file 'D:\models\mmproj-Qwen3.8-27B-Q8_0.gguf' (No such file or directory)
+0.00.285.947 E mtmd_get_memory_usage: error: Failed to load CLIP model from D:\models\mmproj-Qwen3.8-27B-Q8_0.gguf
+
+0.00.285.952 E srv    load_model: [mtmd] failed to get memory usage of mmproj
+0.00.285.961 I cmn  common_init_: fitting params to device memory ...
+0.00.285.962 I cmn  common_init_: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+0.00.285.966 I common_params_fit_impl: getting device memory data for initial parameters:
+0.00.597.397 I common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+0.00.597.403 I common_memory_breakdown_print: |   - CUDA0 (RTX 5090)   | 32606 = 30841 + (21077 = 14399 +    4501 +    2176) +      -19312 |
+0.00.597.403 I common_memory_breakdown_print: |   - Host               |                   2179 =   994 +       0 +    1184                |
+0.00.640.967 I common_params_fit_impl: projected to use 21077 MiB of device memory vs. 30841 MiB of free device memory
+0.00.640.973 I common_params_fit_impl: will leave 9763 >= 1024 MiB of free device memory, no changes needed
+0.00.640.975 I common_fit_params: successfully fit params to free device memory
+0.00.640.987 I common_fit_params: fitting params to free memory took 0.36 seconds
+0.00.691.771 I llama_model_loader: loaded meta data with 46 key-value pairs and 1202 tensors from D:\models\Qwen3.8-27B-NVFP4-MTP-MEDIUM.gguf (version GGUF V3 (latest))
+0.00.691.792 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.691.795 I llama_model_loader: - kv   0:                       general.architecture str              = qwen35
+0.00.691.795 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.691.798 I llama_model_loader: - kv   2:                     general.sampling.top_k i32              = 20
+0.00.691.803 I llama_model_loader: - kv   3:                     general.sampling.top_p f32              = 0.950000
+0.00.691.803 I llama_model_loader: - kv   4:                      general.sampling.temp f32              = 1.000000
+0.00.691.804 I llama_model_loader: - kv   5:                           general.finetune str              = NVFP4-MTP
+0.00.691.804 I llama_model_loader: - kv   6:                           general.basename str              = unsloth__Qwen3.8
+0.00.691.805 I llama_model_loader: - kv   7:                         general.size_label str              = 27B
+0.00.691.805 I llama_model_loader: - kv   8:                            general.license str              = apache-2.0
+0.00.691.806 I "

@@ -1,0 +1,10 @@
+*.log
+*.log.*
+llama-server.exe
+*.gguf
+*.mlock
+*.bin
+*.safetensors
+*.pt
+UpdateLastModel.ps1
+last_model_*.txt

@@ -1,0 +1,28 @@
+"File","Status","ExitCode","StdErr"
+"runGlimmer30B.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
+operable program or batch file.
+"
+"runGlimmer30nv.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
+operable program or batch file.
+"
+"runNemotron35Lightning30B.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
+operable program or batch file.
+"
+"runq36MTP27BThink.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
+operable program or batch file.
+"
+"runq36MTP27Bvision.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
+operable program or batch file.
+"
+"runQwen38-27B.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
+operable program or batch file.
+"
+"runQwen38-27BNV.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
+operable program or batch file.
+"
+"runQwen38-27BThink.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
+operable program or batch file.
+"
+"runQwen38-27Bvision.bat","OK","0","'.\llama-server' is not recognized as an internal or external command,
+operable program or batch file.
+"

@@ -17,9 +17,12 @@ Windows launcher scripts (`run*.bat`) for `llama-server`, one per model config. 
 
 ## Bat conventions
 - Each `run*.bat`: rotates its own logs (`<name>.log` → `.log.1`…`.log.5`), calls `UpdateLastModel.ps1`, runs `.\llama-server` with model-specific args, ends with `pause`.
-- Naming: `run<model>.bat`; suffix `v`/`vision` adds `--mmproj`, `nv` = NVFP4 quant, `Think` = reasoning budget/preserve.
+- Naming: `run<model>.bat`; suffix `v`/`vision` adds `--mmproj`, `nv` = NVFP4 quant, `Think` = reasoning (effort/budget), `Q5K` = Q5K quant variant.
 - Shared arg block is kept consistent across bats (`--batch-size 4096 --ubatch-size 4096 --flash-attn on --cache-type-k q8_0 --cache-type-v q8_0 --fit on --load-mode mlock --jinja --host 0.0.0.0 --port 8080 --threads 24 --api-key sk-123 --log-file %name%.log -n -1 -lv 4 --parallel 1 -ngl 999`); per-bat differences are model path, alias, ctx-size, sampling, spec/reasoning, mmproj.
 - Flag gotchas (newer builds): `--ctx-size` (not `--nctx`), `--batch-size`/`--ubatch-size`. `--reasoning` takes a value (`on|off|auto`) — never put `--reasoning-budget` right after a bare `--reasoning`, or the parser consumes it as the value. Verify flags against the deployed build's `llama-server --help` before editing.
+- Reasoning/thinking flags: `--reasoning on|off|auto` (auto = detect from template; `off` sets `enable_thinking=false`), `--reasoning-effort <level>` passes the effort to the chat template (use this instead of `--chat-template-kwargs`), `--reasoning-budget N` = thinking token budget. `--reasoning-preserve` defaults to the template default — for the Qwen3.8 template that is already "preserve", so the flag is a no-op there.
+- Qwen3.8 template quirks (verified from the GGUF `tokenizer.chat_template`): default `reasoning_effort` is `xhigh`, which injects a "think carefully" instruction into the system prompt; `medium` injects **no** instruction text (only `xhigh` and `low` have instruction strings; `high` is aliased to `xhigh`); `enable_thinking=false` disables thinking (empty `think` block). `preserve_thinking` defaults to true.
+- JSON args in `.bat` files: escape quotes as `\"` and avoid spaces — single quotes are literal in cmd and unquoted spaces split the arg (e.g. `--chat-template-kwargs "{\"a\":1}"`).
 
 ## Environment
 - Test/production box: RTX 5090 (32 GB), Core Ultra 9 285K, 24 threads, CUDA build of llama.cpp with `BLACKWELL_NATIVE_FP4`.

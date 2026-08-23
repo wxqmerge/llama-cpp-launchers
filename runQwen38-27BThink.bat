@@ -13,7 +13,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "%USERPROFILE%\Desktop\Updat
 rem === model ===
 set "args=--model "D:\models\Qwen3.8-27B-NVFP4-MTP-MEDIUM.gguf" --alias "Qwen3.8-27B-NVFP4-MTP-MEDIUM""
 rem === context ===
-set "args=%args% --ctx-size 131072 --fit on"
+rem set "args=%args% --ctx-size 131072 --fit on"
 rem === batch ===
 set "args=%args% --batch-size 4096 --ubatch-size 4096"
 rem === attention + cache ===
@@ -23,7 +23,7 @@ set "args=%args% --temp 0 --top-p 0.95 --top-k 20 --min-p 0.0 --presence-penalty
 rem === reasoning ===
 set "args=%args% --reasoning-budget 16384 --reasoning-effort medium"
 rem === spec ===
-set "args=%args% --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-p-min 0.8"
+set "args=%args% --spec-type draft-mtp --spec-draft-n-max 4 --spec-draft-p-min 0.8"
 rem === loading ===
 set "args=%args% --load-mode mlock"
 rem === template ===

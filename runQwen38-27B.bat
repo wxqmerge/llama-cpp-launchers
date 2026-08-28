@@ -17,7 +17,7 @@ set "args=%args% --ctx-size 131072 --fit on"
 rem === batch ===
 set "args=%args% --batch-size 4096 --ubatch-size 4096"
 rem === attention + cache ===
-set "args=%args% --flash-attn on --cache-type-k q8_0 --cache-type-v q8_0"
+set "args=%args% --flash-attn on --cache-type-k q4_0 --cache-type-v q4_0"
 rem === sampling ===
 set "args=%args% --temp 0.6 --top-p 1.0 --top-k 20 --min-p 0.0 --presence-penalty 0.0 --repeat-penalty 1.0"
 rem === reasoning ===

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "llamacpp/gemma-4-31B-it-qat",
+  "provider": {
+    "llamacpp": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "llama.cpp",
+      "options": {
+        "baseURL": "http://localhost:8080/v1/"
+      },
+      "models": {
+        "Ornith-35B": {
+          "name": "Ornith-35B",
+          "reasoning": true,
+          "tools": true,
+          "vision": true
+        },
+        "Qwen3.6-27B": {
+          "name": "Qwen3.6-27B",
+          "reasoning": true,
+          "tools": true,
+          "vision": true
+        },
+        "Qwen3.8-27B": {
+          "name": "Qwen3.8-27B",
+          "reasoning": true,
+          "tools": true,
+          "vision": true
+        },
+        "Qwen3.6-35B-A3B": {
+          "name": "Qwen3.6-35B-A3B",
+          "reasoning": true,
+          "tools": true,
+          "vision": true
+        },
+        "Muse-Glimmer-30B": {
+          "name": "Muse-Glimmer-30B",
+          "reasoning": true,
+          "tools": true,
+          "vision": true
+        },
+        "gemma-4-26B-A4B": {
+          "name": "gemma-4-26B-A4B",
+          "reasoning": true,
+          "tools": true,
+          "vision": true
+        },
+        "gemma-4-31B-it-qat": {
+          "name": "gemma-4-31B-it-qat",
+          "reasoning": true,
+          "tools": true,
+          "vision": true
+        }
+      }
+    }
+  },
+  "disabled_providers": [],
+  "mcp": {
+    "firecrawl": {
+      "type": "remote",
+      "url": "https://mcp.firecrawl.dev/v2/mcp",
+      "enabled": true
+    },
+    "openscad": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "uv",
+        "run",
+        "--with",
+        "git+https://github.com/quellant/openscad-mcp.git",
+        "openscad-mcp"
+      ],
+      "environment": {
+        "OPENSCAD_EXECUTABLE": "C:\\Program Files\\OpenSCAD (Nightly)\\openscad.exe",
+        "Path": "C:\\Users\\wxqme\\.local\\bin;%Path%"
+      }
+    },
+    "vision": {
+      "type": "local",
+      "enabled": true,
+      "command": ["node", "D:\\openscad\\mcp-vision\\src\\index.js"]
+    }
+  },
+  "plugin": [
+    "opencode-mem"
+  ]
+}
